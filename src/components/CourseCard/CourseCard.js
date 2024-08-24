@@ -13,7 +13,7 @@ import {
 
 const CourseCard = ({course}) => {
   return (
-    <div>
+    <div className="hover:scale-105">
         <Card
           className="max-w-xs" x-chunk="charts-01-chunk-7"
         >
