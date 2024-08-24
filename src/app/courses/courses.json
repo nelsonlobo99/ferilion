@@ -1,0 +1,28 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "name": "Python Web Development",
+            "description": "Python Development uses Python, along with Django or Flask for the back end and HTML, CSS, and JavaScript for the front end, making it a popular choice for web development due to its versatility and extensive libraries.",
+            "icon": "python-logo.png"
+        },
+        {
+            "id": 2,
+            "name": "Data Engineering",
+            "description": "Data engineering with cloud involves creating and managing data pipelines on platforms like AWS, Azure, or GCP to efficiently collect, store, and process data for insights and analytics.",
+            "icon": "data-engineering-icon.png"
+        },
+        {
+            "id": 3,
+            "name": "DevOps with Cloud",
+            "description": "DevOps with cloud integrates development and operations using platforms like AWS, Azure, or GCP to streamline software delivery, automate infrastructure management, and boost collaboration for faster, agile development.",
+            "icon": "dev-ops-icon.png"
+        },
+        {
+            "id": 4,
+            "name": "VMWare and WIntel Administrator",
+            "description": "VMware and Windows Server Administration involves managing virtual machines and Windows Server systems, including provisioning, resource allocation, and maintenance for smooth operation of Windows applications and services.",
+            "icon": "virtualization-icon.png"
+        }
+    ]
+}
