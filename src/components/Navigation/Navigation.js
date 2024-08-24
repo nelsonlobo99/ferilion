@@ -30,10 +30,10 @@ const Navigation = () => {
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
           >
             <Package2 className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
+            <span className="sr-only">Ferilion</span>
           </Link>
           <Link
-            href="#"
+            href="/"
             className="text-foreground w-12 transition-colors hover:text-foreground"
           >
             Home
@@ -45,7 +45,7 @@ const Navigation = () => {
             About Us
           </Link>
           <Link
-            href="#"
+            href="/courses"
             className="text-muted-foreground w-16 transition-colors hover:text-foreground"
           >
             Courses
@@ -63,7 +63,7 @@ const Navigation = () => {
             Careers
           </Link>
           <Link
-            href="#"
+            href="/contact"
             className="text-muted-foreground w-20 transition-colors hover:text-foreground"
           >
             Contact Us
@@ -82,40 +82,49 @@ const Navigation = () => {
           </SheetTrigger>
           <SheetContent side="left">
             <nav className="grid gap-6 text-lg font-medium">
-              <Link
-                href="#"
-                className="flex items-center gap-2 text-lg font-semibold"
-              >
-                <Package2 className="h-6 w-6" />
-                <span className="sr-only">Acme Inc</span>
-              </Link>
-              <Link href="#" className="hover:text-foreground">
-                Dashboard
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Orders
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Products
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Customers
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Analytics
-              </Link>
+            <Link
+            href="#"
+            className="flex items-center gap-2 text-lg font-semibold md:text-base"
+          >
+            <Package2 className="h-6 w-6" />
+            <span className="sr-only">Ferilion</span>
+          </Link>
+          <Link
+            href="/"
+            className="text-foreground w-12 transition-colors hover:text-foreground"
+          >
+            Home
+          </Link>
+          <Link
+            href="#"
+            className="text-muted-foreground w-16 transition-colors hover:text-foreground"
+          >
+            About Us
+          </Link>
+          <Link
+            href="/courses"
+            className="text-muted-foreground w-16 transition-colors hover:text-foreground"
+          >
+            Courses
+          </Link>
+          <Link
+            href="#"
+            className="text-muted-foreground w-16 transition-colors hover:text-foreground"
+          >
+            Alumni
+          </Link>
+          <Link
+            href="#"
+            className="text-muted-foreground w-16 transition-colors hover:text-foreground"
+          >
+            Careers
+          </Link>
+          <Link
+            href="/contact"
+            className="text-muted-foreground w-20 transition-colors hover:text-foreground"
+          >
+            Contact Us
+          </Link>
             </nav>
           </SheetContent>
         </Sheet>
