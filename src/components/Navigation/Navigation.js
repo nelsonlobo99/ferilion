@@ -39,7 +39,7 @@ const Navigation = () => {
             Home
           </Link>
           <Link
-            href="#"
+            href="aboutus"
             className="text-muted-foreground w-16 transition-colors hover:text-foreground"
           >
             About Us
@@ -51,13 +51,19 @@ const Navigation = () => {
             Courses
           </Link>
           <Link
-            href="#"
+            href="/services"
+            className="text-muted-foreground w-24 transition-colors hover:text-foreground"
+          >
+            Our Services
+          </Link>
+          <Link
+            href="alumni"
             className="text-muted-foreground w-16 transition-colors hover:text-foreground"
           >
             Alumni
           </Link>
           <Link
-            href="#"
+            href="careers"
             className="text-muted-foreground w-16 transition-colors hover:text-foreground"
           >
             Careers
@@ -67,12 +73,6 @@ const Navigation = () => {
             className="text-muted-foreground w-20 transition-colors hover:text-foreground"
           >
             Contact Us
-          </Link>
-          <Link
-            href="/services"
-            className="text-muted-foreground w-24 transition-colors hover:text-foreground"
-          >
-            Our Services
           </Link>
         </nav>
         <Sheet>
@@ -102,7 +102,7 @@ const Navigation = () => {
             Home
           </Link>
           <Link
-            href="#"
+            href="aboutus"
             className="text-muted-foreground w-16 transition-colors hover:text-foreground"
           >
             About Us
@@ -114,13 +114,19 @@ const Navigation = () => {
             Courses
           </Link>
           <Link
-            href="#"
+            href="/services"
+            className="text-muted-foreground w-24 transition-colors hover:text-foreground"
+          >
+            Our Services
+          </Link>
+          <Link
+            href="alumni"
             className="text-muted-foreground w-16 transition-colors hover:text-foreground"
           >
             Alumni
           </Link>
           <Link
-            href="#"
+            href="career"
             className="text-muted-foreground w-16 transition-colors hover:text-foreground"
           >
             Careers
@@ -130,12 +136,6 @@ const Navigation = () => {
             className="text-muted-foreground w-20 transition-colors hover:text-foreground"
           >
             Contact Us
-          </Link>
-          <Link
-            href="/services"
-            className="text-muted-foreground w-24 transition-colors hover:text-foreground"
-          >
-            Our Services
           </Link>
             </nav>
           </SheetContent>
