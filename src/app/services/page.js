@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import servicesList from '../../../utilies/servicesList';
 
@@ -33,15 +32,6 @@ const Services = () => {
               </CardContent>
             </Card>
           ))}
-        </section>
-        <section className="mt-12 text-center bg-secondary p-8 rounded-lg">
-          <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
-          <p className="text-muted-foreground mb-6">
-            If you have any questions or need more information about our services, feel free to reach out to us.
-          </p>
-          <Button asChild>
-            <a href="mailto:info@example.com">Contact Us</a>
-          </Button>
         </section>
       </div>
     );
