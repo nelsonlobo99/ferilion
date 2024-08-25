@@ -4,7 +4,6 @@ const prisma = new PrismaClient();
 
 export async function POST(req) {
     const data = await req.formData();
-    console.log(data.get("description"));
     try{
         const response_data = await prisma.courses.create({
             data: {
