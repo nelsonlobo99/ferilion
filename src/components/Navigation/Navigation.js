@@ -68,6 +68,12 @@ const Navigation = () => {
           >
             Contact Us
           </Link>
+          <Link
+            href="/services"
+            className="text-muted-foreground w-24 transition-colors hover:text-foreground"
+          >
+            Our Services
+          </Link>
         </nav>
         <Sheet>
           <SheetTrigger asChild>
@@ -124,6 +130,12 @@ const Navigation = () => {
             className="text-muted-foreground w-20 transition-colors hover:text-foreground"
           >
             Contact Us
+          </Link>
+          <Link
+            href="/services"
+            className="text-muted-foreground w-24 transition-colors hover:text-foreground"
+          >
+            Our Services
           </Link>
             </nav>
           </SheetContent>
