@@ -8,10 +8,10 @@ import { Textarea } from "../ui/textarea";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    fname: '',
-    lname: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    phno: '',
+    phoneNumber: '',
     message: ''
   });
   
@@ -47,10 +47,10 @@ const Contact = () => {
 
       setSuccess(true);
       setFormData({
-        fname: '',
-        lname: '',
+        firstName: '',
+        lastName: '',
         email: '',
-        phno: '',
+        phoneNumber: '',
         message: ''
       });
     } catch (error) {
@@ -75,23 +75,23 @@ const Contact = () => {
             <div className="grid gap-4 mt-6">
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
                 <div className="flex-1">
-                  <Label htmlFor="fname">First Name</Label>
+                  <Label htmlFor="firstName">First Name</Label>
                   <Input
-                    id="fname"
+                    id="firstName"
                     type="text"
                     placeholder="Eg: John"
-                    value={formData.fname}
+                    value={formData.firstName}
                     onChange={handleChange}
                     required
                   />
                 </div>
                 <div className="flex-1">
-                  <Label htmlFor="lname">Last Name</Label>
+                  <Label htmlFor="lastName">Last Name</Label>
                   <Input
-                    id="lname"
+                    id="lastName"
                     type="text"
                     placeholder="Eg: Doe"
-                    value={formData.lname}
+                    value={formData.lastName}
                     onChange={handleChange}
                     required
                   />
@@ -110,11 +110,11 @@ const Contact = () => {
                   />
                 </div>
                 <div className="flex-1">
-                  <Label htmlFor="phno" className="text-lg">Phone No</Label>
+                  <Label htmlFor="phoneNumber" className="text-lg">Phone No</Label>
                   <Input
-                    id="phno"
+                    id="phoneNumber"
                     type="number"
-                    value={formData.phno}
+                    value={formData.phoneNumber}
                     onChange={handleChange}
                     required
                   />

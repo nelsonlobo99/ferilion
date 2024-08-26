@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 const AdminPage = () => {
-  const [formData, setFormData] = useState({
+  const [data, setData] = useState({
     courseName: '',
     description: '',
     coverImage: null
@@ -20,26 +20,50 @@ const AdminPage = () => {
   const handleChange = (e) => {
     const { id, value, type, files } = e.target;
     if (type === 'file') {
-      setFormData({ ...formData, [id]: files[0] });
+      setData({ ...data, [id]: files[0] });
     } else {
-      setFormData({ ...formData, [id]: value });
+      setData({ ...data, [id]: value });
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
     setSuccess(false);
 
-    // Simulate a network request
-    setTimeout(() => {
-      // Handle form submission here
-      // For example, you might upload the data to a server or save it to a database
-      console.log('Form data:', formData);
+    const formData = new FormData();
+    formData.append("courseName", data.courseName);
+    formData.append("description", data.description);
+    formData.append("file", data.coverImage);
+
+
+    try {
+      const response = await fetch('/api/course/add', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
       setSuccess(true);
+
+    }catch{
+      setSuccess(true);
+    }finally{
       setLoading(false);
-    }, 1000);
+    }
+
+    // // Simulate a network request
+    // setTimeout(() => {
+    //   // Handle form submission here
+    //   // For example, you might upload the data to a server or save it to a database
+    //   console.log('Form data:', data);
+    //   setSuccess(true);
+    //   setLoading(false);
+    // }, 1000);
   };
 
   return (
@@ -59,7 +83,7 @@ const AdminPage = () => {
                 id="courseName"
                 type="text"
                 placeholder="Enter course name"
-                value={formData.courseName}
+                value={data.courseName}
                 onChange={handleChange}
                 required
                 className="w-full"
@@ -70,7 +94,7 @@ const AdminPage = () => {
               <Textarea
                 id="description"
                 placeholder="Enter course description"
-                value={formData.description}
+                value={data.description}
                 onChange={handleChange}
                 required
                 className="w-full"
