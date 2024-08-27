@@ -11,10 +11,8 @@ const CourseCard = ({ course }) => {
   const src = course.coverImage;
   const handleRatingChange = (newRating) => {
     setRating(newRating);
-    console.log(`Updated rating for course ${course.id} to ${newRating}`);
   };
 
-  console.log(course)
 
   return (
     <div className="m-4 transform transition-transform duration-300 ease-in-out hover:scale-105">

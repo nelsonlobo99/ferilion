@@ -9,7 +9,7 @@ export async function GET(){
 
             return {
                 id: course.id,
-                couseName: course.name,
+                courseName: course.name,
                 description: course.description,
                 coverImage: course.coverImage ? JSON.parse(course.coverImage).url : ""
             }    

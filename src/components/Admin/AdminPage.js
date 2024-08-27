@@ -91,8 +91,16 @@ const AdminPage = () => {
   const handleDelete = async (courseId) => {
     if (confirm('Are you sure you want to delete this course?')) {
       try {
-        const response = await fetch(`/api/course/delete/${courseId}`, {
+
+        const formData = new FormData();
+
+        formData.append("courseId", courseId)
+        const response = await fetch(`/api/course/delete-course`, {
           method: 'DELETE',
+          // headers: {
+          //   'Content-Type': 'applicati',
+          // },
+          body: formData
         });
   
         // Check if the response status is OK
