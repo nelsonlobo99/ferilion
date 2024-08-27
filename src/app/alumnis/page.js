@@ -1,6 +1,6 @@
 import React from 'react'
 
-function index() {
+export default function Home() {
   return (
     <div className="justify-between p-4 sm:p-6 md:p-8 lg:p-12 xl:p-24">
     <section className="text-center ">
@@ -9,7 +9,6 @@ function index() {
         </p>
     </section>
     </div>
-  )
+  );
 }
 
-export default index
