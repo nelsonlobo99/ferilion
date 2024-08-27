@@ -8,11 +8,13 @@ import Link from 'next/link';
 const CourseCard = ({ course }) => {
   const [showMore, setShowMore] = useState(false);
   const [rating, setRating] = useState(course.rating || 0);
-
+  const src = course.coverImage;
   const handleRatingChange = (newRating) => {
     setRating(newRating);
     console.log(`Updated rating for course ${course.id} to ${newRating}`);
   };
+
+  console.log(course)
 
   return (
     <div className="m-4 transform transition-transform duration-300 ease-in-out hover:scale-105">
@@ -20,7 +22,8 @@ const CourseCard = ({ course }) => {
         
         <div className="relative h-64 w-full bg-gray-200">
           <Image
-            src={`/${course.icon}`}
+            loader={() => src}
+            src={course.coverImage}
             alt={course.name}
             layout="fill"
             objectFit="contain"
@@ -28,7 +31,7 @@ const CourseCard = ({ course }) => {
         </div>
 
         <CardContent className="p-6 flex flex-col flex-grow">
-          <h2 className="text-2xl font-bold mb-4">{course.name}</h2>
+          <h2 className="text-2xl font-bold mb-4">{course.courseName}</h2>
           <p
             className={`text-muted-foreground text-base leading-6 ${
               showMore ? '' : 'line-clamp-3'
