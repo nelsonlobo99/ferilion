@@ -9,7 +9,7 @@
             "brochure": "/path/to/python-brochure.pdf"
         },
         {
-            "id": 2,
+            "id": 14,
             "name": "Data Engineering",
             "description": "Data engineering with cloud involves creating and managing data pipelines on platforms like AWS, Azure, or GCP to efficiently collect, store, and process data for insights and analytics.",
             "icon": "data-engineering-icon.png",
@@ -18,7 +18,7 @@
             
         },
         {
-            "id": 3,
+            "id": 15,
             "name": "DevOps with Cloud",
             "description": "DevOps with cloud integrates development and operations using platforms like AWS, Azure, or GCP to streamline software delivery, automate infrastructure management, and boost collaboration for faster, agile development.",
             "icon": "dev-ops-icon.png",
@@ -35,7 +35,7 @@
             "brochure": "/path/to/vmware-brochure.pdf"  
         },
         {
-            "id": 5,
+            "id": 18,
             "name": "Java Full-stack Development",
             "description": "Learn full-stack Java development, including front-end and back-end technologies.",
             "icon": "JavaFullStack.jpg",
@@ -43,7 +43,7 @@
             "brochure": "/path/to/java-brochure.pdf"
         },
         {
-            "id": 6,
+            "id": 19,
             "name": "Python Full-stack Development",
             "description": "Become a Python full-stack developer by mastering both front-end and back-end technologies.",
             "icon": "PythonFullstackDevelopment.jpg",
@@ -59,7 +59,7 @@
             "brochure": "/path/to/software-testing-brochure.pdf"
         },
         {
-            "id": 8,
+            "id": 16,
             "name": "AWS",
             "description": "Comprehensive training on AWS services and solutions.",
             "icon": "AWS.png",
@@ -67,7 +67,7 @@
             "brochure": "/path/to/aws-brochure.pdf"
         },
         {
-            "id": 9,
+            "id": 17,
             "name": "Azure",
             "description": "Learn Microsoft Azure cloud services and architecture.",
             "icon": "Azure.png",
@@ -107,7 +107,7 @@
             "brochure": "/path/to/cloud-admin-brochure.pdf"
         },
         {
-            "id": 14,
+            "id": 141,
             "name": "Windows and VMware Administration",
             "description": "Managing Windows and VMware systems for optimal performance.",
             "icon": "Windows-VMware.jpg",
@@ -115,7 +115,7 @@
             "brochure": "/path/to/windows-vmware-admin-brochure.pdf"
         },
         {
-            "id": 15,
+            "id": 115,
             "name": "Business Analyst",
             "description": "Training on business analysis techniques and practices.",
             "icon": "BA.jpg",
@@ -123,7 +123,7 @@
             "brochure": "/path/to/business-analyst-brochure.pdf"
         },
         {
-            "id": 16,
+            "id": 161,
             "name": "PAT: Professional Adaptability Training",
             "description": "Professional Adaptability Training for skill enhancement.",
             "icon": "AdaptabilityWordCloud.png",
