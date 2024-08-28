@@ -1,14 +1,9 @@
-import React from 'react'
+import Alumnis from "@/components/Alumnis/Alumnis";
 
 export default function Home() {
   return (
-    <div className="justify-between p-4 sm:p-6 md:p-8 lg:p-12 xl:p-24">
-    <section className="text-center ">
-        <h2 className="text-4xl font-bold mb-4">Coming Soon...</h2>
-        <p className="text-muted-foreground">
-        </p>
-    </section>
-    </div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-4 sm:p-6 md:p-8 lg:p-12 xl:p-24">
+      <Alumnis />
+    </main>
   );
 }
-
