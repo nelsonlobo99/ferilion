@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import courseList from '../../app/courses/courses.json'; 
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import {Image} from '@/components/ui'
 
 const CourseDetailsPage = () => {
   const router = useRouter();
@@ -27,7 +28,7 @@ const CourseDetailsPage = () => {
           </CardHeader>
 
           <div className="relative h-80 w-full bg-gray-200">
-            <img
+            <Image
               src={`/${course.icon}`} 
               alt={course.name}
               className="object-cover h-full w-full border-t border-gray-300 rounded-t-lg"
