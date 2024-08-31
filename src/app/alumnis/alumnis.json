@@ -3,37 +3,44 @@
     {
       "name": "Abhay",
       "description": "Being taught by the most experienced trainers in the field at Ferilion Labs coupled with flexible training had accelerated my level of understanding from an absolute beginner to a confident coder now. Streamlined class schedule, mentor interaction would make my time greater.",
-      "salary": "15 LPA"
+      "salary": "15 LPA",
+      "image": "Recruitment.jpeg"
     },
     {
       "name": "Mamtha",
       "description": "Real-time training mode at Ferilion Labs nudged me to interact with my peers which improved my communication skills. I found it interesting how every concept is followed by a live demonstration by the trainers. I suggest smaller session durations to help us feel refreshed and focused.",
-      "salary": "8.5 LPA"
+      "salary": "8.5 LPA",
+      "image": "Recruitment.jpeg"
     },
     {
       "name": "Mani Dev",
       "description": "Ferilion Labs provided a transformative opportunity. The Python training was exceptional. I gained confidence in tech tools, especially Spark and PySpark. To enhance the experience, improvements in amicability, SQL training, timely feedback, and missed activities like seminars are needed.",
-      "salary": "23 LPA"
+      "salary": "23 LPA",
+      "image": "Recruitment.jpeg"
     },
     {
       "name": "Malavika",
       "description": "Ferilion Labs' insistence on continuous hands-on training contributed to strengthening my coding skills. Regular mocks helped me get familiar with the interview process. We can benefit more from additional tool training, timely mock feedbacks.",
-      "salary": "14 LPA"
+      "salary": "14 LPA",
+      "image": "Recruitment.jpeg"
     },
     {
       "name": "Harsha",
       "description": "Innovative training elements like daily coding tasks at Ferilion Labs' ensures consistency. Dedicated mentors were of great help in every step of the way after training sessions. SQL coding tasks helped me in better conceptual clarity. I would appreciate a higher frequency of classes and mentor availability.",
-      "salary": "19 LPA"
+      "salary": "19 LPA",
+      "image": "Recruitment.jpeg"
     },
     {
       "name": "Vishnu",
       "description": "Technical training I got at Ferilion Labs proves to be so valuable. It helped me not only crack various Python Developer roles but also face every day coding challenges at work with ease. Candidates would benefit further from regular training, more classes on supplementary tools.",
-      "salary": "13 LPA"
+      "salary": "13 LPA",
+      "image": "Recruitment.jpeg"
     },
     {
       "name": "Jagadish",
       "description": "In-house training at Ferilion made me make the most out of the high quality infrastructure they offer. Programming training is also the best in the market. I will find it more useful to have had classes the same time, a few more sessions on project training, supervision.",
-      "salary": "15 LPA"
+      "salary": "15 LPA",
+      "image": "Recruitment.jpeg"
     }
   ]
 }

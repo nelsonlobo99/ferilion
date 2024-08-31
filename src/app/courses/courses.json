@@ -43,7 +43,7 @@
             "brochure": "/path/to/java-brochure.pdf"
         },
         {
-            "id": 6,
+            "id": 14,
             "name": "Python Full-stack Development",
             "description": "Become a Python full-stack developer by mastering both front-end and back-end technologies.",
             "icon": "PythonFullstackDevelopment.jpg",
@@ -51,7 +51,7 @@
             "brochure": "/path/to/python-fullstack-brochure.pdf"
         },
         {
-            "id": 7,
+            "id": 15,
             "name": "Software Testing - Manual and Automation",
             "description": "Master both manual and automated testing techniques and tools.",
             "icon": "SoftwareTesting.png",
@@ -59,7 +59,7 @@
             "brochure": "/path/to/software-testing-brochure.pdf"
         },
         {
-            "id": 8,
+            "id": 16,
             "name": "AWS",
             "description": "Comprehensive training on AWS services and solutions.",
             "icon": "AWS.png",
@@ -107,7 +107,7 @@
             "brochure": "/path/to/cloud-admin-brochure.pdf"
         },
         {
-            "id": 14,
+            "id": 6,
             "name": "Windows and VMware Administration",
             "description": "Managing Windows and VMware systems for optimal performance.",
             "icon": "Windows-VMware.jpg",
@@ -115,7 +115,7 @@
             "brochure": "/path/to/windows-vmware-admin-brochure.pdf"
         },
         {
-            "id": 15,
+            "id": 7,
             "name": "Business Analyst",
             "description": "Training on business analysis techniques and practices.",
             "icon": "BA.jpg",
@@ -123,7 +123,7 @@
             "brochure": "/path/to/business-analyst-brochure.pdf"
         },
         {
-            "id": 16,
+            "id": 8,
             "name": "PAT: Professional Adaptability Training",
             "description": "Professional Adaptability Training for skill enhancement.",
             "icon": "AdaptabilityWordCloud.png",

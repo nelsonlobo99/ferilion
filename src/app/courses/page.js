@@ -36,8 +36,8 @@ const Courses = () => {
   return (
     <div className="justify-between p-4 sm:p-6 md:p-8 lg:p-12 xl:p-24">
       <section className="text-center ">
-          <h2 className="text-4xl font-bold mb-4">Our Courses</h2>
-          <p className="text-muted-foreground">
+          <h2 className="text-4xl font-bold mb-4 animate-fadeInBottom">Our Courses</h2>
+          <p className="text-muted-foreground animate-fadeInBottom">
           Discover our comprehensive range of courses designed to enhance your skills and knowledge across various fields. Whether you are looking to advance your career, explore new subjects, or gain a competitive edge, our courses provide flexible learning opportunities tailored to meet your goals.
           </p>
       </section>
