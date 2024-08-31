@@ -2,6 +2,8 @@
 
 import CourseCard from '@/components/CourseCard/CourseCard';
 import React, { useState, useEffect } from 'react';
+import { Bubble } from '@typebot.io/nextjs';
+
 
 const Courses = () => {
 
