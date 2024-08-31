@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import courseList from "@/app/courses/courses.json";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -12,8 +11,31 @@ const CourseDetailsPage = ({ params }) => {
   const { courseId } = params;
   const [dialogOpen, setDialogOpen] = useState(false);
   const [isContentVisible, setIsContentVisible] = useState(false);
+  const [course, setCourse] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const course = courseList.courses.find((c) => c.id === parseInt(courseId, 10));
+  useEffect(() => {
+    // Fetch data from the API
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/api/course/get-course/${courseId}`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        setCourse(result.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setError('Error fetching courses');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
 
   if (!course) {
     return <p className="text-center text-xl mt-4">Course not found</p>;
@@ -24,9 +46,25 @@ const CourseDetailsPage = ({ params }) => {
 
   const toggleContentVisibility = () => setIsContentVisible(!isContentVisible);
 
+  if(loading) return (
+    <div className="h-fit flex justify-center items-center">
+        <p className="text-xl font-bold">Loading...</p>
+    </div>
+  )
+
+  if(error){
+    return (
+        <div className="h-fit flex justify-center items-center">
+            <p className="text-xl font-bold text-red-700">Something went wrong.</p>
+        </div>
+    )
+  }
+
+  const coverImage = course.coverImage
+
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
         {/* Left Side */}
         <div className="md:col-span-2 space-y-6">
           {/* Course Title and Description */}
@@ -37,7 +75,7 @@ const CourseDetailsPage = ({ params }) => {
 
           {/* What You'll Learn */}
           <div className="bg-white p-4 rounded-lg shadow-md border-t-4 border-blue-400">
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">What Youll Learn</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">What You'll Learn</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-1">
               {course.learningPoints?.map((point, index) => (
                 <li key={index} className="flex items-center space-x-2">
@@ -168,7 +206,8 @@ const CourseDetailsPage = ({ params }) => {
         <Card className="relative shadow-lg rounded-lg overflow-hidden"> */}
             <div className="relative w-full h-48 md:h-80 bg-gray-200">
               <Image
-                src={`/${course.icon}`}
+                loader={() => coverImage}
+                src={course.coverImage}
                 alt={course.name}
                 layout="fill"
                 objectFit="contain"
