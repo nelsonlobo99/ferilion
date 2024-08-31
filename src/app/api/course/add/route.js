@@ -22,8 +22,8 @@ export async function POST(req) {
         })
 
         const response_data = {
-            courseId: db_response.id,
-            courseName: db_response.name,
+            id: db_response.id,
+            name: db_response.name,
             description: db_response.description,
             coverImage: JSON.parse(db_response.coverImage).url
         }

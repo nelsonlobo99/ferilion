@@ -9,8 +9,6 @@ export async function GET(req, {params}){
             }
         });
 
-        console.log(course)
-
         if(!course) return Response.json({error: 'No Data Found'}, {status: 400});
         
         course.coverImage = JSON.parse(course.coverImage).url
