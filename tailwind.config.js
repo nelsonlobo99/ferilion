@@ -83,6 +83,10 @@ module.exports = {
           '50%': { transform: 'scale(1.05)' },
           '100%': { transform: 'scale(1)' },
         },
+        blink: {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0 },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -92,6 +96,7 @@ module.exports = {
         "fadeInRight": "fadeInRight 0.8s ease-out forwards",
         "fadeInBottom": "fadeInBottom 0.8s ease-out forwards",
         "pulseAnimation": "pulseAnimation 2s infinite",
+        'blink-fast': 'blink 0.7s step-end infinite',
       },
     },
   },

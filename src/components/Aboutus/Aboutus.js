@@ -16,7 +16,7 @@ const AboutUs = () => {
   const { ref: step5Ref, inView: step5InView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4">
       {/* Page Title Section */}
       <motion.section
         initial={{ opacity: 0, y: 50 }}
