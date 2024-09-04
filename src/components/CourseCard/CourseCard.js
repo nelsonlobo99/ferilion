@@ -343,7 +343,7 @@
 
 // CourseCard.js
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -352,15 +352,9 @@ import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
 
 const CourseCard = ({ course }) => {
-  const [showMore, setShowMore] = useState(false);
-  const [rating, setRating] = useState(course.rating || 0);
   const src = course.coverImage;
 
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
-
-  const handleRatingChange = (newRating) => {
-    setRating(newRating);
-  };
 
   return (
     <motion.div
