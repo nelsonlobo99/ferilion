@@ -37,28 +37,32 @@ const TeamMember = ({ name, role, image, description, socials, delay }) => {
           className="rounded-full"
         />
       </motion.div>
-      <motion.h3
-        initial={{ opacity: 0, y: 20 }}
-        animate={{
-          opacity: isInView ? 1 : 0,
-          y: isInView ? 0 : 20,
-        }}
-        transition={{ duration: 0.6, delay: delay + 0.2 }}
-        className="text-lg font-bold mb-2"
-      >
-        {name}
-      </motion.h3>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{
-          opacity: isInView ? 1 : 0,
-          y: isInView ? 0 : 20,
-        }}
-        transition={{ duration: 0.6, delay: delay + 0.3 }}
-        className="text-gray-600 mb-4"
-      >
-        {role}
-      </motion.p>
+      <motion.div className="flex justify-center">
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: isInView ? 1 : 0,
+            y: isInView ? 0 : 20,
+          }}
+          transition={{ duration: 0.6, delay: delay + 0.2 }}
+          className="text-lg font-bold mb-2"
+        >
+          {name}
+        </motion.h3>
+      </motion.div>
+      <motion.div className="flex justify-center">
+        <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: isInView ? 1 : 0,
+              y: isInView ? 0 : 20,
+            }}
+            transition={{ duration: 0.6, delay: delay + 0.3 }}
+            className="text-gray-600 mb-4">
+            {role}
+          </motion.p>
+      </motion.div>
+      <motion.div className="flex justify-center h-56">
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{
@@ -66,10 +70,11 @@ const TeamMember = ({ name, role, image, description, socials, delay }) => {
           y: isInView ? 0 : 20,
         }}
         transition={{ duration: 0.6, delay: delay + 0.4 }}
-        className="text-gray-700 mb-4"
+        className="text-gray-700 mb-4 text-center"
       >
         {description}
       </motion.p>
+      </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{
@@ -77,7 +82,7 @@ const TeamMember = ({ name, role, image, description, socials, delay }) => {
           y: isInView ? 0 : 20,
         }}
         transition={{ duration: 0.6, delay: delay + 0.5 }}
-        className="flex space-x-4"
+        className="flex justify-center"
       >
         {socials.map((social) => (
           <a
@@ -85,7 +90,7 @@ const TeamMember = ({ name, role, image, description, socials, delay }) => {
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-blue-500"
+            className="text-gray-500 hover:text-blue-500 px-2"
           >
             {social.icon}
           </a>

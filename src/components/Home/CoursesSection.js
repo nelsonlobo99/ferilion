@@ -95,13 +95,14 @@ const CoursesSection = () => {
         {/* Carousel Container */}
         <Carousel
           plugins={[plugin.current]}
-          className="w-full max-w-3xl mx-auto p-6"
+          className="w-full max-w-6xl mx-auto p-6"
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
         >
           <CarouselContent>
             {courses.map((course, index) => (
-              <CarouselItem key={index}>
+         
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <motion.div variants={cardVariants}>
                   <Card className="min-w-[300px] flex-shrink-0 bg-white shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
                     <Image
@@ -112,13 +113,13 @@ const CoursesSection = () => {
                       className="w-full h-48 object-cover"
                     />
                     <CardHeader>
-                      <CardTitle className="text-2xl font-semibold text-gray-800">
+                      <CardTitle className="text-lg h-12 mb-4 font-semibold text-gray-800">
                         {course.title}
                       </CardTitle>
                       <p className="text-sm text-gray-500">{course.duration}</p>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-gray-600 mb-4">{course.description}</p>
+                      {/* <p className="text-gray-600 mb-4">{course.description}</p> */}
                       <Button className="bg-red-600 text-white hover:bg-red-700 transition duration-300">
                         Course Details
                       </Button>
