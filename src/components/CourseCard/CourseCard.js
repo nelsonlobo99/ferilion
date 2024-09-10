@@ -71,7 +71,7 @@ const CourseCard = ({ course }) => {
           >
             {/* Debounce Link for smoother navigation */}
             <Link href={`/courses/${course.id}`} passHref>
-              <Button className="w-full">
+              <Button className="w-full bg-red-500 hover:bg-red-600">
                 Learn More
               </Button>
             </Link>

@@ -135,7 +135,7 @@ const CourseDetailsPage = ({ params }) => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="bg-white p-4 rounded-lg shadow-md border-t-4 border-red-400"
           >
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">Requirements</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">Pre-quisites</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-1">
               {course.requirements?.map((requirement, index) => (
                 <li key={index} className="flex items-center space-x-2">
@@ -161,7 +161,7 @@ const CourseDetailsPage = ({ params }) => {
             className="bg-white p-4 rounded-lg shadow-md border-t-4 border-yellow-400"
           >
             <h2 className="text-xl font-semibold text-gray-800 mb-2 cursor-pointer" onClick={toggleContentVisibility}>
-              <span className="flex justify-between items-center">Course Content
+              <span className="flex justify-between items-center">What future hold?
               <svg className={`inline-block w-5 h-5 ml-2 transition-transform ${isContentVisible ? "rotate-180" : ""}`} 
                   fill="none" 
                   stroke="currentColor" 
@@ -210,7 +210,7 @@ const CourseDetailsPage = ({ params }) => {
             </div>
             <CardContent className="p-4">
               <div className="space-y-4">
-                <Button onClick={handleOpenDialog} className="w-full bg-blue-500 text-white hover:bg-blue-600">
+                <Button onClick={handleOpenDialog} className="w-full bg-red-600 text-white hover:bg-red-700">
                   Enroll Now
                 </Button>
                 <div className="space-y-4"> 

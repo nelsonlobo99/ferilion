@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -13,50 +13,43 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Link from 'next/link';
 
 const CoursesSection = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false });
   const controls = useAnimation();
+  const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     controls.start(isInView ? 'visible' : 'hidden');
   }, [isInView, controls]);
 
+
+  const fetchCourses = async () => {
+    try {
+      const response = await fetch('/api/course/get-courses');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const result = await response.json();
+      setCourses(result.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setError('Error fetching courses');
+    }
+  };
+
+  useEffect(() => {
+    fetchCourses();
+  },[])
+
+
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
 
-  const courses = [
-    {
-      title: 'Full Stack Web Development',
-      duration: '12-week intensive program',
-      description: 'Master both front-end and back-end technologies, including React, Node.js, and MongoDB.',
-      image: '/AWS.png',
-    },
-    {
-      title: 'Data Science & Machine Learning',
-      duration: '16-week comprehensive course',
-      description: 'Dive into data analysis, statistical modeling, and machine learning algorithms using Python.',
-      image: '/PythonFullstackDevelopment.jpg',
-    },
-    {
-      title: 'Data Science & Machine Learning',
-      duration: '16-week comprehensive course',
-      description: 'Dive into data analysis, statistical modeling, and machine learning algorithms using Python.',
-      image: '/PythonFullstackDevelopment.jpg',
-    },{
-      title: 'Data Science & Machine Learning',
-      duration: '16-week comprehensive course',
-      description: 'Dive into data analysis, statistical modeling, and machine learning algorithms using Python.',
-      image: '/PythonFullstackDevelopment.jpg',
-    },{
-      title: 'Data Science & Machine Learning',
-      duration: '16-week comprehensive course',
-      description: 'Dive into data analysis, statistical modeling, and machine learning algorithms using Python.',
-      image: '/PythonFullstackDevelopment.jpg',
-    },
-  ];
+
 
   const titleVariants = {
     hidden: { opacity: 0, y: -90 },
@@ -105,24 +98,35 @@ const CoursesSection = () => {
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <motion.div variants={cardVariants}>
                   <Card className="min-w-[300px] flex-shrink-0 bg-white shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
+                  <motion.div
+                    className="relative h-64 w-full bg-gray-200"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: isInView ? 1 : 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    {/* Consider using Framer Motion image component if needed */}
                     <Image
-                      src={course.image}
-                      alt={course.title}
-                      width={300} // Adjusted width
-                      height={200} // Adjusted height
-                      className="w-full h-48 object-cover"
+                      loader={() => course.coverImage}
+                      src={course.coverImage}
+                      alt={course.name}
+                      layout="fill"
+                      objectFit="cover"
+                      // Removed hover transform for consistency with Framer Motion
                     />
+                  </motion.div>
                     <CardHeader>
                       <CardTitle className="text-lg h-12 mb-4 font-semibold text-gray-800">
-                        {course.title}
+                        {course.courseName}
                       </CardTitle>
-                      <p className="text-sm text-gray-500">{course.duration}</p>
+                      <p className="text-sm text-gray-500">{"12 weeks"}</p>
                     </CardHeader>
                     <CardContent>
                       {/* <p className="text-gray-600 mb-4">{course.description}</p> */}
-                      <Button className="bg-red-600 text-white hover:bg-red-700 transition duration-300">
-                        Course Details
-                      </Button>
+                      <Link href={`courses/${course.id}`}>
+                        <Button className="bg-red-600 text-white hover:bg-red-700 transition duration-300">
+                          Course Details
+                        </Button>
+                      </Link>
                     </CardContent>
                   </Card>
                 </motion.div>

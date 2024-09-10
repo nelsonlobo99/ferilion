@@ -14,6 +14,7 @@ const AlumniCard = ({ alumnus, index }) => {
   // Define xOffset based on index
   const xOffset = index % 2 === 0 ? -50 : 50; // Reduced xOffset for smoother effect
 
+  console.log(`/${alumnus.image}`)
   return (
     <motion.div
       ref={ref}
@@ -22,12 +23,11 @@ const AlumniCard = ({ alumnus, index }) => {
       transition={{ duration: 1, delay: index * 0.2, ease: "easeInOut" }} // Increased duration and eased transition
       className={`relative flex items-center max-w-5xl mx-auto rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 bg-gradient-to-b from-white via-gray-100 to-gray-200`}
     >
-      <div className={`w-2/5 relative ${index % 2 === 0 ? 'order-1' : 'order-2'}`}>
+      <div className={`w-2/5 h-64 relative ${index % 2 === 0 ? 'order-1' : 'order-2'}`}>
         <Image
           src={`/${alumnus.image}`} // Ensure images are in the public directory or adjust path
           alt={alumnus.name}
           layout="fill"
-          objectFit="cover"
           className="rounded-l-xl transform transition-transform duration-500 hover:scale-110 grayscale hover:grayscale-0"
         />
       </div>

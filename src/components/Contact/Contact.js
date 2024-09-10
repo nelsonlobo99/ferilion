@@ -10,10 +10,10 @@ import { useInView } from 'react-intersection-observer';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    fname: '',
-    lname: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    phno: '',
+    phoneNumber: '',
     message: ''
   });
 
