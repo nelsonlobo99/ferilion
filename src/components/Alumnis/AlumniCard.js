@@ -14,7 +14,6 @@ const AlumniCard = ({ alumnus, index }) => {
   // Define xOffset based on index
   const xOffset = index % 2 === 0 ? -50 : 50; // Reduced xOffset for smoother effect
 
-  console.log(`/${alumnus.image}`)
   return (
     <motion.div
       ref={ref}
