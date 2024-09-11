@@ -70,7 +70,7 @@ const Testimonials = () => {
           animate={inView ? 'visible' : 'hidden'}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Our students' success is our top priority
+          Our students&apos; success is our top priority
         </motion.h1>
 
         <motion.div
@@ -86,7 +86,7 @@ const Testimonials = () => {
               variants={staggerChild}
               transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
             >
-              <p className="mb-4 text-lg italic">"{testimonial.testimonial}"</p>
+              <p className="mb-4 text-lg italic">&quot;{testimonial.testimonial}&quot;</p>
               <div className="flex items-center">
                 <Image
                   src={testimonial.image}

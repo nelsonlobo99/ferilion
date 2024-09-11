@@ -37,7 +37,7 @@ const CourseDetailsPage = ({ params }) => {
       };
   
       fetchData();
-    }, []);
+    }, [courseId]);
 
   if (!course) {
     return <p className="text-center text-xl mt-4">Course not found</p>;
