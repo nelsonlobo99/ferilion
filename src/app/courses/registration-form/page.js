@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material'; // You can use any UI library or custom modal component
 import { Button } from '@/components/ui/button';
