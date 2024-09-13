@@ -19,6 +19,6 @@ export async function GET(){
 
     }catch(error){
         console.log(error)
-        return Response.json({error: "Error!"}, {status: 500});
+        return Response.json({error: error}, {status: 500});
     }
 }
