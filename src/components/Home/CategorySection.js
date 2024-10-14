@@ -60,7 +60,7 @@ const CategoriesSection = () => {
             <div className="flex items-center justify-center mb-4">
               <div className="bg-white p-4 rounded-full font-black text-2xl w-16 text-center">1</div>
             </div>
-            <h3 className="text-xl font-semibold text-center">Register</h3>
+            <h3 className="text-xl font-semibold text-center">Join us</h3>
           </div>
 
           {/* Category Card 2: Learn */}
