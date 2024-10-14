@@ -62,7 +62,7 @@ const HeroSection = () => {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative pb-80 pt-48 bg-black overflow-hidden">
+      <section className="relative pb-80 pt-48 bg-black overflow-hidden md:px-20 md:pt-32 md:pb-64">
         <div className="absolute inset-0 overflow-hidden">
           <div
             className="absolute inset-0 bg-black opacity-50"
@@ -72,7 +72,7 @@ const HeroSection = () => {
         <div className="relative container mx-auto px-0 flex flex-col md:flex-row items-center justify-between z-10">
           {/* Left Section */}
           <motion.div
-            className="md:w-2/5 mb-8 md:mb-0 text-white"
+            className="md:w-3/5 mb-8 md:mb-0 text-white"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -81,7 +81,7 @@ const HeroSection = () => {
               <span className="text-xl font-semibold text-red-500 mb-2">| Best Learning Institute</span>
             </div>
             {/* Typing and erasing text animation */}
-            <h1 className="text-5xl font-bold mb-6">
+            <h1 className="text-5xl md:text-4xl font-bold mb-6">
               Transform Your Passion into <span className="text-red-500">{displayedText}</span>
               <span className="blinking-cursor animate-blink-fast">|</span>
             </h1>
@@ -97,7 +97,7 @@ const HeroSection = () => {
             </section>
           </motion.div>
           <div>
-            <Image src="/cover-image.png" alt="User" width={600} height={600} className="mr-2" />
+            <Image src="/cover-image.png" alt="User" width={600} height={600} className="mr-2 md:w-5/6 md:mx-auto" />
             {/* Star animations with random positions */}
             {/* <Star position={getRandomPosition()} />
             <Star position={getRandomPosition()} />

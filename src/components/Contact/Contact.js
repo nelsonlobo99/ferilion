@@ -230,7 +230,7 @@ const Contact = () => {
               <h3 className="text-3xl font-bold">Contact Information</h3>
             </div>
             <p className="mt-6">
-              <strong>Address:</strong> 123 Main Street, Suite 400, City, State, ZIP
+              <strong>Address:</strong> 282, 8th Main Rd, BEML Layout 6th Stage, BEML Layout, Brookefield, Bengaluru, Karnataka - 560066.
             </p>
             <p className="mt-4">
               <strong>Phone:</strong> +91 6366 548 237

@@ -73,7 +73,7 @@ const MissionVisionSection = () => {
         className="relative flex justify-around items-center"
       >
         {/* Top Image with white gap */}
-        <motion.div className="relative top-12 right-[-6em]" variants={imageVariants}>
+        <motion.div className="relative top-12 right-[-6em] md:w-2/6" variants={imageVariants}>
           <Image
             src='/History-Img.jpeg'
             alt="Mission Vision Image"
@@ -83,7 +83,7 @@ const MissionVisionSection = () => {
           />
         </motion.div>
         {/* Bottom Image */}
-        <motion.div className="absolute top-14 left-28 z-10" variants={imageVariants}>
+        <motion.div className="absolute top-14 left-28 z-10 md:w-2/6 md:left-10" variants={imageVariants}>
           <Image
             src='/History-Img.jpeg'
             alt="Mission Vision Image"
@@ -94,7 +94,7 @@ const MissionVisionSection = () => {
         </motion.div>
 
         {/* Mission Section */}
-        <motion.div className="py-24 w-full max-w-4xl" variants={headingVariants}>
+        <motion.div className="py-24 md:max-w-2xl md:w-5/12 w-full max-w-4xl" variants={headingVariants}>
           <motion.h1 className="text-4xl font-bold mb-6">Our Mission</motion.h1>
           <div className="space-y-8 text-lg py-4">
             {[
@@ -124,7 +124,7 @@ const MissionVisionSection = () => {
         initial="hidden"
         animate={controls}
         variants={containerVariants}
-        className="pl-60 pr-36 grid grid-cols-1 lg:grid-cols-2 gap-8"
+        className="pl-60 pr-36 grid grid-cols-1 lg:grid-cols-2 gap-8 md:px-16"
       >
         <motion.div className="text-center lg:text-left" variants={headingVariants}>
           <motion.h2 className="text-3xl font-bold mb-4">Our Vision</motion.h2>
