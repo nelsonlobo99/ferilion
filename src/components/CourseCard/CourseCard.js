@@ -70,11 +70,11 @@ const CourseCard = ({ course }) => {
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             {/* Debounce Link for smoother navigation */}
-            <Link href={`/courses/${course.id}`} passHref>
+            {/* <Link href={`/courses/${course.id}`} passHref>
               <Button className="w-full bg-red-500 hover:bg-red-600">
                 Learn More
               </Button>
-            </Link>
+            </Link> */}
           </motion.div>
         </CardFooter>
       </Card>
