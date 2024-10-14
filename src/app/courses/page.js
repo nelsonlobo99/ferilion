@@ -36,7 +36,7 @@ const Courses = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between px-4 py-16 sm:py-18 md:py-18 lg:py-18 xl:py-18 sm:px-6 md:px-8 lg:px-12 xl:px-24">
+    <main className="flex min-h-screen flex-col items-center justify-between px-4 py-16 sm:py-18 md:py-20 lg:py-18 xl:py-18 sm:px-6 md:px-8 lg:px-12 xl:px-24">
       <section className="text-center ">
           <h2 className="text-4xl font-bold mb-4 animate-fadeInBottom">Our Courses</h2>
           <p className="text-muted-foreground animate-fadeInBottom">

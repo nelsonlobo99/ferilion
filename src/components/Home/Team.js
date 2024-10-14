@@ -17,7 +17,7 @@ const TeamMember = ({ name, role, image, description, socials, delay }) => {
         opacity: isInView ? 1 : 0,
         scale: isInView ? 1 : 0.8,
       }}
-      transition={{ duration: 0.5, delay }} // Apply the delay here
+      transition={{ duration: 0.5, delay, ease: "easeInOut" }}
       className="bg-white rounded-lg shadow-md p-4 bg-gradient-to-t from-red-300 to-red-100"
     >
       <motion.div
@@ -26,7 +26,7 @@ const TeamMember = ({ name, role, image, description, socials, delay }) => {
           opacity: isInView ? 1 : 0,
           y: isInView ? 0 : 20,
         }}
-        transition={{ duration: 0.6, delay: delay + 0.1 }}
+        transition={{ duration: 0.6, delay: delay + 0.1, ease: "easeInOut" }}
         className="flex items-center justify-center mb-4"
       >
         <Image
@@ -44,7 +44,7 @@ const TeamMember = ({ name, role, image, description, socials, delay }) => {
             opacity: isInView ? 1 : 0,
             y: isInView ? 0 : 20,
           }}
-          transition={{ duration: 0.6, delay: delay + 0.2 }}
+          transition={{ duration: 0.6, delay: delay + 0.15, ease: "easeInOut" }}
           className="text-lg font-bold mb-2"
         >
           {name}
@@ -52,28 +52,29 @@ const TeamMember = ({ name, role, image, description, socials, delay }) => {
       </motion.div>
       <motion.div className="flex justify-center">
         <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{
-              opacity: isInView ? 1 : 0,
-              y: isInView ? 0 : 20,
-            }}
-            transition={{ duration: 0.6, delay: delay + 0.3 }}
-            className="text-gray-600 mb-4">
-            {role}
-          </motion.p>
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: isInView ? 1 : 0,
+            y: isInView ? 0 : 20,
+          }}
+          transition={{ duration: 0.6, delay: delay + 0.2, ease: "easeInOut" }}
+          className="text-gray-600 mb-4"
+        >
+          {role}
+        </motion.p>
       </motion.div>
       <motion.div className="flex justify-center h-56">
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{
-          opacity: isInView ? 1 : 0,
-          y: isInView ? 0 : 20,
-        }}
-        transition={{ duration: 0.6, delay: delay + 0.4 }}
-        className="text-gray-700 mb-4 text-center"
-      >
-        {description}
-      </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: isInView ? 1 : 0,
+            y: isInView ? 0 : 20,
+          }}
+          transition={{ duration: 0.6, delay: delay + 0.25, ease: "easeInOut" }}
+          className="text-gray-700 mb-4 text-center"
+        >
+          {description}
+        </motion.p>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -81,7 +82,7 @@ const TeamMember = ({ name, role, image, description, socials, delay }) => {
           opacity: isInView ? 1 : 0,
           y: isInView ? 0 : 20,
         }}
-        transition={{ duration: 0.6, delay: delay + 0.5 }}
+        transition={{ duration: 0.6, delay: delay + 0.3, ease: "easeInOut" }}
         className="flex justify-center"
       >
         {socials.map((social) => (
@@ -109,18 +110,9 @@ const Team = () => {
       description:
         "Robert is a seasoned software engineer with 10+ years of experience. He has a passion for teaching and mentoring students to help them succeed in their careers.",
       socials: [
-        {
-          url: "https://www.facebook.com/",
-          icon: <FaFacebookF />,
-        },
-        {
-          url: "https://www.twitter.com/",
-          icon: <FaTwitter />,
-        },
-        {
-          url: "https://www.linkedin.com/",
-          icon: <FaLinkedinIn />,
-        },
+        { url: "https://www.facebook.com/", icon: <FaFacebookF /> },
+        { url: "https://www.twitter.com/", icon: <FaTwitter /> },
+        { url: "https://www.linkedin.com/", icon: <FaLinkedinIn /> },
       ],
     },
     {
@@ -130,18 +122,9 @@ const Team = () => {
       description:
         "John is a student success coach who provides support to our students throughout their time at Ferilion Labs. He's always available to answer questions and provide guidance to help students achieve their goals.",
       socials: [
-        {
-          url: "https://www.facebook.com/",
-          icon: <FaFacebookF />,
-        },
-        {
-          url: "https://www.twitter.com/",
-          icon: <FaTwitter />,
-        },
-        {
-          url: "https://www.linkedin.com/",
-          icon: <FaLinkedinIn />,
-        },
+        { url: "https://www.facebook.com/", icon: <FaFacebookF /> },
+        { url: "https://www.twitter.com/", icon: <FaTwitter /> },
+        { url: "https://www.linkedin.com/", icon: <FaLinkedinIn /> },
       ],
     },
     {
@@ -151,18 +134,9 @@ const Team = () => {
       description:
         "Karen is a career counselor who helps students find the right job after completing our courses. She has a wealth of knowledge and experience in the tech industry, and she's dedicated to helping our students succeed.",
       socials: [
-        {
-          url: "https://www.facebook.com/",
-          icon: <FaFacebookF />,
-        },
-        {
-          url: "https://www.twitter.com/",
-          icon: <FaTwitter />,
-        },
-        {
-          url: "https://www.linkedin.com/",
-          icon: <FaLinkedinIn />,
-        },
+        { url: "https://www.facebook.com/", icon: <FaFacebookF /> },
+        { url: "https://www.twitter.com/", icon: <FaTwitter /> },
+        { url: "https://www.linkedin.com/", icon: <FaLinkedinIn /> },
       ],
     },
     {
@@ -172,18 +146,9 @@ const Team = () => {
       description:
         "Hannah is our admissions coordinator who helps students enroll in our programs. She's dedicated to providing excellent customer service and ensuring a smooth enrollment process for our students.",
       socials: [
-        {
-          url: "https://www.facebook.com/",
-          icon: <FaFacebookF />,
-        },
-        {
-          url: "https://www.twitter.com/",
-          icon: <FaTwitter />,
-        },
-        {
-          url: "https://www.linkedin.com/",
-          icon: <FaLinkedinIn />,
-        },
+        { url: "https://www.facebook.com/", icon: <FaFacebookF /> },
+        { url: "https://www.twitter.com/", icon: <FaTwitter /> },
+        { url: "https://www.linkedin.com/", icon: <FaLinkedinIn /> },
       ],
     },
   ];
@@ -191,31 +156,25 @@ const Team = () => {
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, { triggerOnce: true });
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   return (
     <motion.section
       className="py-12 relative overflow-hidden"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: headerInView ? 1 : 0, y: headerInView ? 0 : 50 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
     >
       <div className="container mx-auto">
         <motion.div
           className="absolute top-0 left-0 w-full h-2/3 bg-black"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
         />
         <motion.h2
           className="text-xl font-semibold text-red-500 mb-4 text-center relative z-10"
-          variants={fadeInUp}
-          initial="hidden"
-          animate={headerInView ? "visible" : "hidden"}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: headerInView ? 1 : 0, y: headerInView ? 0 : 20 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
         >
           | Our Team
         </motion.h2>
@@ -226,7 +185,7 @@ const Team = () => {
             opacity: headerInView ? 1 : 0,
             y: headerInView ? 0 : -20,
           }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           className="text-4xl font-bold mb-8 text-center text-white relative z-10"
         >
           Our team is dedicated to your success
