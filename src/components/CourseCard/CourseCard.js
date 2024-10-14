@@ -32,14 +32,16 @@ const CourseCard = ({ course }) => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {/* Consider using Framer Motion image component if needed */}
-          <Image
-            loader={() => src}
-            src={course.coverImage}
-            alt={course.name}
-            layout="fill"
-            objectFit="cover"
-            // Removed hover transform for consistency with Framer Motion
-          />
+            <Image
+              loader={() => src}
+              layout='fill'
+              src={course.coverImage}
+              alt={course.name}
+              objectFit="cover"
+              className='w-full border-none	h-auto'
+              // Removed hover transform for consistency with Framer Motion
+            />
+
         </motion.div>
 
         <CardContent className="p-6 flex flex-col flex-grow">

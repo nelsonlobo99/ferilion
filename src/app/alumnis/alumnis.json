@@ -7,12 +7,6 @@
       "image": "alumni/alumni1.jpg"
     },
     {
-      "name": "Mamtha",
-      "description": "Real-time training mode at Ferilion Labs nudged me to interact with my peers which improved my communication skills. I found it interesting how every concept is followed by a live demonstration by the trainers. I suggest smaller session durations to help us feel refreshed and focused.",
-      "salary": "8.5 LPA",
-      "image": "alumni/alumni3.jpg"
-    },
-    {
       "name": "Mani Dev",
       "description": "Ferilion Labs provided a transformative opportunity. The Python training was exceptional. I gained confidence in tech tools, especially Spark and PySpark. To enhance the experience, improvements in amicability, SQL training, timely feedback, and missed activities like seminars are needed.",
       "salary": "23 LPA",
@@ -35,12 +29,6 @@
       "description": "Technical training I got at Ferilion Labs proves to be so valuable. It helped me not only crack various Python Developer roles but also face every day coding challenges at work with ease. Candidates would benefit further from regular training, more classes on supplementary tools.",
       "salary": "13 LPA",
       "image": "alumni/alumni2.jpg"
-    },
-    {
-      "name": "Jagadish",
-      "description": "In-house training at Ferilion made me make the most out of the high quality infrastructure they offer. Programming training is also the best in the market. I will find it more useful to have had classes the same time, a few more sessions on project training, supervision.",
-      "salary": "15 LPA",
-      "image": "alumni/alumni1.jpg"
     }
   ]
 }
