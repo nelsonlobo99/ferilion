@@ -122,11 +122,11 @@ const CoursesSection = () => {
                     </CardHeader>
                     <CardContent>
                       {/* <p className="text-gray-600 mb-4">{course.description}</p> */}
-                      <Link href={`courses/${course.id}`}>
+                      {/* <Link href={`courses/${course.id}`}>
                         <Button className="bg-red-600 text-white hover:bg-red-700 transition duration-300">
                           Course Details
                         </Button>
-                      </Link>
+                      </Link> */}
                     </CardContent>
                   </Card>
                 </motion.div>
