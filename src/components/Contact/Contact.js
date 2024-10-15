@@ -289,7 +289,7 @@ const Contact = () => {
             className="bg-gray-200 p-4 rounded-lg"
           >
             <h4 className="font-semibold">2. How can I enroll in a course?</h4>
-            <p>You can enroll in a course directly through our website by selecting the course and clicking the 'Enroll Now' button.</p>
+            <p>You can enroll in a course directly through our website by selecting the course and clicking the &apos;Enroll Now&apos; button.</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
