@@ -10,10 +10,10 @@ import { useInView } from 'react-intersection-observer';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    fname: '',
+    lname: '',
     email: '',
-    phoneNumber: '',
+    phno: '',
     message: ''
   });
 
@@ -60,13 +60,10 @@ const Contact = () => {
     }
   };
 
-  // Define animations for different sections
   const [refContactHeader, inViewContactHeader] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [refForm, inViewForm] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [refContactInfo, inViewContactInfo] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [refFAQ, inViewFAQ] = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  // Field-level animations
   const [refFname, inViewFname] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [refLname, inViewLname] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [refEmail, inViewEmail] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -207,11 +204,11 @@ const Contact = () => {
                     className="mt-2"
                   />
                 </motion.div>
-                <Button className="mt-6 w-full" type="submit" disabled={loading}>
-                  {loading ? 'Sending...' : 'Send Message'}
+                <Button type="submit" disabled={loading} className="w-full mt-4">
+                  {loading ? "Sending..." : "Send Message"}
                 </Button>
-                {success && <p className="mt-4 text-green-500">Message sent successfully!</p>}
-                {error && <p className="mt-4 text-red-500">Error: {error}</p>}
+                {success && <p className="text-green-500 mt-4">Message sent successfully!</p>}
+                {error && <p className="text-red-500 mt-4">{error}</p>}
               </div>
             </form>
           </div>
@@ -238,51 +235,84 @@ const Contact = () => {
             <p className="mt-4">
               <strong>Email:</strong> support@ferilionlabs.com
             </p>
+            
             <div className="mt-8">
               <h4 className="text-xl font-bold">Find Us on the Map:</h4>
-              <div className="mt-4">
+              <div className="mt-4 flex flex-col lg:flex-row gap-6">
+                {/* Map */}
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1969709255304!2d77.71525387507621!3d12.959244387354989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1337d1b0fcc7%3A0x214b72c7cd4d7359!2sFerilion%20Labs!5e0!3m2!1sen!2sin!4v1724503825871!5m2!1sen!2sin"
-                  width="100%" 
-                  height="300" 
-                  allowFullScreen 
+                  width="300"
+                  height="250"
+                  allowFullScreen
                   loading="lazy"
-                  className="border-0"
+                  className="border-0 flex-shrink-0 w-full lg:w-1/2"
                 ></iframe>
+
+                {/* Image beside the map */}
+                <img  
+                  src="address.png" 
+                  alt="Company Building or Office" 
+                  className="w-full lg:w-1/2 h-64 object-cover rounded-lg" 
+                />
               </div>
             </div>
           </div>
         </motion.div>
       </div>
 
-      {/* FAQ Section */}
-      <motion.section
-        ref={refFAQ}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: inViewFAQ ? 1 : 0, y: inViewFAQ ? 0 : 20 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="mt-12 bg-gray-100 py-12 px-6 rounded-lg shadow-md"
-      >
-        <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-        <div className="max-w-5xl mx-auto">
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-xl font-bold">What types of courses do you offer?</h3>
-              <p className="text-muted-foreground mt-2">
-                We offer a wide range of courses in technology, business, design, and more. Our courses are designed to cater to beginners as well as advanced learners.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold">How can I contact support?</h3>
-              <p className="text-muted-foreground mt-2">
-                You can contact our support team by filling out the form above, emailing us at support@ferilionlabs.com, or calling our support hotline at +91 6366 548 237.
-              </p>
-            </div>
-          </div>
+      {/* Frequently Asked Questions Section */}
+      <section className="mt-14">
+        <motion.h2
+          ref={refFAQ}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: inViewFAQ ? 1 : 0, y: inViewFAQ ? 0 : 20 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="text-3xl font-bold text-center mb-8"
+        >
+          Frequently Asked Questions
+        </motion.h2>
+        <div className="space-y-6">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: inViewFAQ ? 1 : 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
+            className="bg-gray-200 p-4 rounded-lg"
+          >
+            <h4 className="font-semibold">1. What courses do you offer?</h4>
+            <p>We offer a variety of courses in software development, data science, and digital marketing. You can find the complete list on our website.</p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: inViewFAQ ? 1 : 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeInOut" }}
+            className="bg-gray-200 p-4 rounded-lg"
+          >
+            <h4 className="font-semibold">2. How can I enroll in a course?</h4>
+            <p>You can enroll in a course directly through our website by selecting the course and clicking the 'Enroll Now' button.</p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: inViewFAQ ? 1 : 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeInOut" }}
+            className="bg-gray-200 p-4 rounded-lg"
+          >
+            <h4 className="font-semibold">3. What is the duration of the courses?</h4>
+            <p>The duration of our courses varies, typically ranging from 4 to 12 weeks, depending on the content and intensity of the course.</p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: inViewFAQ ? 1 : 0 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: "easeInOut" }}
+            className="bg-gray-200 p-4 rounded-lg"
+          >
+            <h4 className="font-semibold">4. Do you offer any certifications?</h4>
+            <p>Yes, all our courses come with a certificate upon successful completion, which you can share on your LinkedIn profile.</p>
+          </motion.div>
         </div>
-      </motion.section>
+      </section>
     </div>
   );
-}
+};
 
 export default Contact;
