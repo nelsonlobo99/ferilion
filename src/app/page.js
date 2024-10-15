@@ -17,26 +17,17 @@ import RegistrationForm from '@/components/Home/RegistrationFrom';
 
 const Home = () => {
   const [showForm, setShowForm] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
   const homeRef = useRef(null);
 
-  const handleScroll = () => {
-    if (homeRef.current) {
-      const scrollY = window.scrollY;
-      const homeHeight = homeRef.current.offsetHeight;
-      const scrollPosition = (scrollY / homeHeight) * 100;
-
-      if (scrollPosition >= 50 && !hasScrolled) {
-        setShowForm(true);
-        setHasScrolled(true); // To ensure the form opens only once
-      }
-    }
-  };
-
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [hasScrolled]);
+    // Set a timeout to show the registration form after 3 seconds
+    const timer = setTimeout(() => {
+      setShowForm(true);
+    }, 7000); // Change 3000 to the desired time in milliseconds
+
+    // Cleanup the timer on component unmount
+    return () => clearTimeout(timer);
+  }, []);
 
   const closeForm = () => {
     setShowForm(false);

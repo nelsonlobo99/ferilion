@@ -104,7 +104,7 @@ const Contact = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: inViewForm ? 1 : 0, x: inViewForm ? 0 : -50 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="bg-gray-50 p-8 rounded-lg shadow-md lg:flex lg:flex-col lg:justify-between lg:py-12"
+          className="bg-gray-50 p-8 rounded-lg shadow-md lg:flex lg:flex-col lg:justify-between lg:py-12 mb-8 md:mb-0 lg:mg-0"
         >
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-8">
