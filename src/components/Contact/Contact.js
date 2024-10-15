@@ -10,10 +10,10 @@ import { useInView } from 'react-intersection-observer';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    fname: '',
-    lname: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    phno: '',
+    phoneNumber: '',
     message: ''
   });
 
@@ -47,10 +47,10 @@ const Contact = () => {
 
       setSuccess(true);
       setFormData({
-        fname: '',
-        lname: '',
+        firstName: '',
+        lastName: '',
         email: '',
-        phno: '',
+        phoneNumber: '',
         message: ''
       });
     } catch (error) {
@@ -64,10 +64,10 @@ const Contact = () => {
   const [refForm, inViewForm] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [refContactInfo, inViewContactInfo] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [refFAQ, inViewFAQ] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [refFname, inViewFname] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [refLname, inViewLname] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [reffirstName, inViewfirstName] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [reflastName, inViewlastName] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [refEmail, inViewEmail] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [refPhno, inViewPhno] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [refphoneNumber, inViewphoneNumber] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [refMessage, inViewMessage] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
@@ -114,36 +114,36 @@ const Contact = () => {
               <div className="grid gap-6">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <motion.div
-                    ref={refFname}
+                    ref={reffirstName}
                     initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: inViewFname ? 1 : 0, x: inViewFname ? 0 : -50 }}
+                    animate={{ opacity: inViewfirstName ? 1 : 0, x: inViewfirstName ? 0 : -50 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
                     className="flex-1"
                   >
-                    <Label htmlFor="fname" className="text-lg">First Name</Label>
+                    <Label htmlFor="firstName" className="text-lg">First Name</Label>
                     <Input
-                      id="fname"
+                      id="firstName"
                       type="text"
                       placeholder="Eg: John"
-                      value={formData.fname}
+                      value={formData.firstName}
                       onChange={handleChange}
                       required
                       className="mt-2"
                     />
                   </motion.div>
                   <motion.div
-                    ref={refLname}
+                    ref={reflastName}
                     initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: inViewLname ? 1 : 0, x: inViewLname ? 0 : 50 }}
+                    animate={{ opacity: inViewlastName ? 1 : 0, x: inViewlastName ? 0 : 50 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
                     className="flex-1"
                   >
-                    <Label htmlFor="lname" className="text-lg">Last Name</Label>
+                    <Label htmlFor="lastName" className="text-lg">Last Name</Label>
                     <Input
-                      id="lname"
+                      id="lastName"
                       type="text"
                       placeholder="Eg: Doe"
-                      value={formData.lname}
+                      value={formData.lastName}
                       onChange={handleChange}
                       required
                       className="mt-2"
@@ -170,18 +170,18 @@ const Contact = () => {
                     />
                   </motion.div>
                   <motion.div
-                    ref={refPhno}
+                    ref={refphoneNumber}
                     initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: inViewPhno ? 1 : 0, x: inViewPhno ? 0 : 50 }}
+                    animate={{ opacity: inViewphoneNumber ? 1 : 0, x: inViewphoneNumber ? 0 : 50 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
                     className="flex-1"
                   >
-                    <Label htmlFor="phno" className="text-lg">Phone No</Label>
+                    <Label htmlFor="phoneNumber" className="text-lg">Phone No</Label>
                     <Input
-                      id="phno"
+                      id="phoneNumber"
                       type="tel"
                       placeholder="Eg: +1234567890"
-                      value={formData.phno}
+                      value={formData.phoneNumber}
                       onChange={handleChange}
                       required
                       className="mt-2"
