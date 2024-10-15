@@ -71,7 +71,7 @@ const AboutUs = () => {
           </Button>
         </motion.div>
         <motion.div
-          className="lg:w-1/2 flex justify-center"
+          className="lg:w-1/2 p-4 flex justify-center"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}

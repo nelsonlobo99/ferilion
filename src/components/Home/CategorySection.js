@@ -23,7 +23,7 @@ const CategoriesSection = () => {
   return (
     <motion.section
       ref={ref}
-      className="relative overflow-hidden mt-[-12rem] z-10"
+      className="relative overflow-hidden md:mt-[-12rem] mt-[-18rem] z-10"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       transition={{ duration: 0.8 }}
@@ -56,7 +56,7 @@ const CategoriesSection = () => {
 
         <div className="flex justify-center space-x-12">
           {/* Category Card 1: Register */}
-          <div className="p-6 rounded-lg shadow-lg w-52 bg-lime-200">
+          <div className="p-3 md:p-6 lg:p-6 rounded-lg shadow-lg w-52 bg-lime-200">
             <div className="flex items-center justify-center mb-4">
               <div className="bg-white p-4 rounded-full font-black text-2xl w-16 text-center">1</div>
             </div>
@@ -64,7 +64,7 @@ const CategoriesSection = () => {
           </div>
 
           {/* Category Card 2: Learn */}
-          <div className="p-6 rounded-lg shadow-lg w-52 bg-red-300">
+          <div className="p-3 md:p-6 lg:p-6 rounded-lg shadow-lg w-52 bg-red-300">
             <div className="flex items-center justify-center mb-4">
               <div className="bg-white p-4 rounded-full font-black text-2xl w-16 text-center">2</div>
             </div>
@@ -72,7 +72,7 @@ const CategoriesSection = () => {
           </div>
 
           {/* Category Card 3: Get Placed */}
-          <div className="p-6 rounded-lg shadow-lg w-52 bg-lime-200">
+          <div className="p-3 md:p-6 lg:p-6 rounded-lg shadow-lg w-52 bg-lime-200">
             <div className="flex items-center justify-center mb-4">
               <div className="bg-white p-4 rounded-full font-black text-2xl w-16 text-center">3</div>
             </div>
