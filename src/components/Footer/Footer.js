@@ -1,5 +1,7 @@
+'use client'
+
 import React from 'react'
-import { Button } from "@/components/ui/button"
+import { Bubble } from '@typebot.io/nextjs';
 
 const Footer = () => {
   return (
@@ -24,6 +26,11 @@ const Footer = () => {
             </p>
           </div>
         </section>
+        {typeof window !== undefined && 
+        <Bubble 
+          typebot={"my-typebot-1i0ilxv"}
+          theme={{ button: { backgroundColor: "#c81919", size: "medium" } }}/>
+        }
     </div>
   )
 }

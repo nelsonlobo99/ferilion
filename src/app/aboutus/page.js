@@ -1,15 +1,9 @@
-import React from 'react'
+import Aboutus from "@/components/Aboutus/Aboutus";
 
-function index() {
+export default function Home() {
   return (
-    <div className="justify-between p-4 sm:p-6 md:p-8 lg:p-12 xl:p-24">
-    <section className="text-center ">
-        <h2 className="text-4xl font-bold mb-4">Coming Soon...</h2>
-        <p className="text-muted-foreground">
-        </p>
-    </section>
-    </div>
-  )
+    <main className="flex min-h-screen flex-col items-center justify-between px-4 py-16 sm:py-18 md:py-20 lg:py-18 xl:py-18 sm:px-6 md:px-8 lg:px-12 xl:px-24">
+      <Aboutus />
+    </main>
+  );
 }
-
-export default index

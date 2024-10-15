@@ -8,7 +8,6 @@ export async function DELETE(req) {
 
   const courseId = data.get("courseId");
 
-  console.log(courseId)
 
   try {
     await prisma.courses.delete({
