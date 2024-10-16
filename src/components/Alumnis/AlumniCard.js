@@ -1,45 +1,75 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useInView } from 'react-intersection-observer';
+import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
 const AlumniCard = ({ alumnus, index }) => {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Animation triggers only once when the element enters view
-    threshold: 0.1, // Trigger the animation when 10% of the element is in view
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
-  // Define xOffset based on index
-  const xOffset = index % 2 === 0 ? -50 : 50; // Reduced xOffset for smoother effect
+  const [hovered, setHovered] = useState(false);
+
+  const toggleHover = () => {
+    setHovered(!hovered);
+  };
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: xOffset }}
-      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : xOffset }}
-      transition={{ duration: 1, delay: index * 0.2, ease: "easeInOut" }} // Increased duration and eased transition
-      className={`relative flex items-center max-w-5xl mx-auto rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 bg-gradient-to-b from-white via-gray-100 to-gray-200`}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="relative group max-w-xs mx-auto cursor-pointer transform transition-all duration-500 hover:scale-105"
+      onMouseEnter={toggleHover}
+      onMouseLeave={toggleHover}
     >
-      <div className={`w-2/5 h-64 relative ${index % 2 === 0 ? 'order-1' : 'order-2'}`}>
-        <Image
-          src={`/${alumnus.image}`} // Ensure images are in the public directory or adjust path
-          alt={alumnus.name}
-          layout="fill"
-          className="rounded-l-xl transform transition-transform duration-500 hover:scale-110 grayscale hover:grayscale-0"
-        />
-      </div>
-      <div className={`w-3/5 p-10 text-center z-10 flex flex-col justify-center items-center bg-white bg-opacity-90 rounded-r-xl backdrop-blur-sm ${index % 2 === 0 ? 'order-2' : 'order-1'}`}>
-        <h2 className="text-4xl font-semibold text-gray-900 mb-4">
-          {alumnus.name}
-        </h2>
-        <p className="text-lg text-gray-700 mb-6">
-          {alumnus.description}
-        </p>
-        <p className="text-3xl font-bold text-green-500">
-          ₹{alumnus.salary} Annual CTC
-        </p>
+      {/* Card Structure */}
+      <div className="bg-white shadow-lg rounded-lg overflow-hidden relative">
+        {/* Image */}
+        <div className="relative h-36 w-full">
+          <Image
+            src={`/${alumnus.image}`} // Ensure images are correctly linked (e.g., "/images/filename.jpg")
+            alt={alumnus.name}
+            layout="fill"
+            objectFit="cover"
+            className="object-cover"
+          />
+        </div>
+        {/* Content */}
+        <div className="p-4 text-center">
+          <h2 className="text-lg font-bold text-gray-800">{alumnus.name}</h2>
+          <p className="text-md font-bold text-green-500">
+            ₹{alumnus.salary} Annual CTC
+          </p>
+        </div>
+
+        {/* Hover Overlay Full Description */}
+        {hovered && (
+          <div
+            className="absolute top-0 left-0 w-full h-auto bg-white bg-opacity-95 p-4 z-10 flex flex-col justify-start items-center shadow-2xl overflow-hidden"
+            style={{
+              maxHeight: "250px",  // Set a maximum height for the overlay
+              overflowY: "auto",    // Enable vertical scrolling
+              scrollbarWidth: "thin", // For Firefox, make scrollbar thinner
+              WebkitOverflowScrolling: "touch", // For smoother scrolling on iOS
+              "&::-webkit-scrollbar": {
+                display: "none", // Hide scrollbar for webkit browsers
+              },
+            }}
+          >
+            <h2 className="text-lg font-bold text-gray-800 mb-2">
+              {alumnus.name}
+            </h2>
+            <p className="text-sm text-gray-600 mb-2">{alumnus.description}</p>
+            <p className="text-md font-bold text-green-500">
+              ₹{alumnus.salary} LPA Annual CTC
+            </p>
+          </div>
+        )}
       </div>
     </motion.div>
   );

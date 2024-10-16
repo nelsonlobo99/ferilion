@@ -28,7 +28,7 @@ const Navigation = () => {
 
   return (
     <div>
-      <header className="fixed top-0 left-0 right-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 z-50 sm:justify-between md: justify-between">
+      <header className="md:fixed lg:fixed top-0 left-0 right-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 z-50 sm:justify-between md: justify-between">
         {/* Logo Section */}
         <div className="flex items-center">
           <Link
@@ -86,17 +86,17 @@ const Navigation = () => {
         </nav>
 
         {/* Search Box Section */}
-        {/* <div className="flex-1 flex items-center justify-end">
-          <form className="ml-auto flex-1 sm:flex-initial">
+        <div className="flex items-center justify-end">
+          <form className="sm:flex-initial">
             <div className="relative">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
                 placeholder="Search..."
-                className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
+                className="pl-8 sm:w-[100px] md:w-[100px] lg:w-[200px]"
               />
             </div>
-          </form> */}
+          </form>
           {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="secondary" size="icon" className="rounded-full">
@@ -113,7 +113,7 @@ const Navigation = () => {
               <DropdownMenuItem>Logout</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu> */}
-        {/* </div> */}
+        </div>
 
         {/* Mobile Menu */}
         <Sheet>

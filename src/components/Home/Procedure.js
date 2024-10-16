@@ -54,7 +54,7 @@ const Procedure = () => {
   };
 
   return (
-    <section ref={sectionRef} className="container mx-auto py-12 px-4">
+    <section ref={sectionRef} className="container mx-auto pt-12 px-4">
       <motion.h2
         className="text-xl font-semibold text-red-500 mb-2"
         variants={commonFadeIn}
@@ -83,14 +83,14 @@ const Procedure = () => {
           transition={{ delay: 0.4 }}
         >
           <Image
-            src="/History-Img.jpeg"
+            src="/coding.jpg"
             alt="Students working on a project"
             width={800}
             height={450}
-            className="rounded-lg"
+            className="rounded-lg h-3/4"
           />
           <motion.div
-            className="absolute bottom-4 left-4 bg-white p-4 shadow-lg rounded-lg flex space-x-8 w-full justify-around"
+            className="absolute bottom-48 left-4 bg-white p-4 shadow-lg rounded-lg flex space-x-8 w-full justify-around"
             variants={zoomIn}
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}

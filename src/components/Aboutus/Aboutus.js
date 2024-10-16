@@ -43,9 +43,23 @@ const AboutUs = () => {
       </motion.section>
 
       {/* History Section */}
-      <section className="flex flex-col lg:flex-row items-center justify-between mb-16">
+      <section className="flex flex-col lg:flex-row items-center justify-around mb-16">
+      <motion.div
+          className="lg:w-1/2 p-4 flex justify-center"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <Image
+            src='/history.jpg'
+            alt="Our History"
+            width={500}
+            height={100}
+            className="rounded-lg shadow-lg h-72 w-80"
+          />
+        </motion.div>
         <motion.div
-          className="lg:w-1/2"
+          className="lg:w-2/3"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -69,20 +83,6 @@ const AboutUs = () => {
           <Button className="bg-red-600 text-white hover:bg-red-700 transition-colors duration-300">
             Know more
           </Button>
-        </motion.div>
-        <motion.div
-          className="lg:w-1/2 flex justify-center"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <Image
-            src='/History-Img.jpeg'
-            alt="Our History"
-            width={500}
-            height={300}
-            className="rounded-lg shadow-lg"
-          />
         </motion.div>
       </section>
 
@@ -237,7 +237,7 @@ const ProcedureStep = ({ step, title, description }) => (
 
 const Feature = ({ title, description, image }) => (
   <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center">
-    <Image src={image} alt={title} width={100} height={100} className="rounded-full mb-4" />
+    <Image src={image} alt={title} width={100} height={100} className="rounded-full object-cover mb-4" />
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600">{description}</p>
   </div>
