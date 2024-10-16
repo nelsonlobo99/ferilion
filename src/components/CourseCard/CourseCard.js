@@ -37,8 +37,8 @@ const CourseCard = ({ course }) => {
               layout='fill'
               src={course.coverImage}
               alt={course.name}
-              objectFit="cover"
-              className='w-full border-none	h-auto'
+              objectFit="contain"
+              className='w-full border-none	h-auto p-4 text-center'
               // Removed hover transform for consistency with Framer Motion
             />
 
