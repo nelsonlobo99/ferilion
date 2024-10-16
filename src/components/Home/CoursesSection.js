@@ -110,7 +110,8 @@ const CoursesSection = () => {
                       src={course.coverImage}
                       alt={course.name}
                       layout="fill"
-                      objectFit="cover"
+                      objectFit="contain"
+                      className='w-full border-none	h-auto p-4 text-center'
                       // Removed hover transform for consistency with Framer Motion
                     />
                   </motion.div>
