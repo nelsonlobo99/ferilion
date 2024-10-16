@@ -274,8 +274,8 @@ const RegistrationForm = ({ isVisible, onClose }) => {
                       Select your qualification
                     </option>
                     <option value="highschool">High School Diploma</option>
-                    <option value="bachelors">Bachelor's Degree</option>
-                    <option value="masters">Master's Degree</option>
+                    <option value="bachelors">Bachelor&apos;s Degree</option>
+                    <option value="masters">Master&apos;s Degree</option>
                     <option value="other">Other</option>
                   </select>
                   {errors.qualification && (
