@@ -22,7 +22,8 @@ const Footer = () => {
           </div>
           <div>
             <p className="text-muted-foreground mb-6">
-                Made with ❤️ by XYZ
+                Made with ❤️ by Ferilion Labs
+
             </p>
           </div>
         </section>
