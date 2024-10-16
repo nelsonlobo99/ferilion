@@ -106,35 +106,48 @@ const RegistrationForm = ({ isVisible, onClose }) => {
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault(); // Prevent page refresh
+  //   const validationErrors = validateStep(currentStep);
+  //   if (Object.keys(validationErrors).length === 0) {
+  //     // Handle successful submission here
+  //     try {
+  //       const response = await fetch('/registered-users', {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //         body: JSON.stringify(formData), // Send form data as JSON
+  //       });
+
+  //       if (response.ok) {
+  //         const result = await response.json(); // Assuming the server responds with JSON
+  //         console.log("Form data submitted:", result);
+  //         setSubmitted(true); // Set submitted state to true
+  //       } else {
+  //         throw new Error('Failed to submit the form. Please try again.');
+  //       }
+  //     } catch (error) {
+  //       console.error("Error:", error);
+  //       // Optionally set an error state to display to the user
+  //     }
+  //   } else {
+  //     setErrors(validationErrors);
+  //   }
+  // };
+
+  const handleSubmit = (e) => {
     e.preventDefault(); // Prevent page refresh
     const validationErrors = validateStep(currentStep);
     if (Object.keys(validationErrors).length === 0) {
       // Handle successful submission here
-      try {
-        const response = await fetch('/registered-users', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData), // Send form data as JSON
-        });
-
-        if (response.ok) {
-          const result = await response.json(); // Assuming the server responds with JSON
-          console.log("Form data submitted:", result);
-          setSubmitted(true); // Set submitted state to true
-        } else {
-          throw new Error('Failed to submit the form. Please try again.');
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        // Optionally set an error state to display to the user
-      }
+      console.log('Form data submitted:', formData);
+      setSubmitted(true); // Set submitted state to true
+      // Optionally reset the form or change the visibility state if needed
     } else {
       setErrors(validationErrors);
     }
-  };
+  };  
 
   if (!isVisible) return null; // Prevent opening the form if submitted
 
@@ -150,13 +163,13 @@ const RegistrationForm = ({ isVisible, onClose }) => {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-[-2rem] right-[-1rem] text-gray-500 hover:text-gray-700"
+          className="absolute top-4 right-4 text-red-500 hover:text-red-700"
         >
           <AiOutlineClose size={24} />
         </button>
 
         {/* Progress Indicator */}
-        <div className="flex justify-between mb-6">
+        <div className="flex justify-between mb-6 mt-6">
           {steps.map((step, index) => (
             <div
               key={index}
