@@ -291,35 +291,44 @@ const Models = () => {
       {/* Modal for displaying complete data */}
 
       {isModalOpen && selectedPackage && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-sm">
-          <div
-            className={`bg-gradient-to-r ${selectedPackage.color} text-white rounded-lg shadow-2xl p-8 w-11/12 max-w-5xl transform transition-transform duration-300 ease-in-out scale-95 relative`}
-          >
-            {/* Close Button (Cross Mark) */}
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 text-white hover:text-red-500 transition duration-200"
-              aria-label="Close"
-            >
-              <AiOutlineClose size={24} />
-            </button>
-            <h2 className="text-2xl font-bold mb-2 text-center">
-              {selectedPackage.title} Details
-            </h2>
-            <hr className="border-t border-gray-300 my-2" />
-            <table className="min-w-full border-collapse">
-              <tbody className="text-left">
-                {selectedPackage.completeData.map((item, index) => (
-                  <tr key={index} className="border-b hover:bg-gray-700">
-                    <td className="px-4 py-2 font-semibold">{item.label}:</td>
-                    <td className="px-4 py-2">{item.value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
+  <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-sm">
+    <div
+      className={`bg-gradient-to-r ${selectedPackage.color} text-white rounded-lg shadow-2xl p-6 sm:p-8 w-11/12 max-w-md sm:max-w-5xl transform transition-transform duration-300 ease-in-out scale-95 relative max-h-[90vh] overflow-y-auto`}
+      style={{
+        overflowY: "auto",    // Enable vertical scrolling
+        scrollbarWidth: "thin", // For Firefox, make scrollbar thinner
+        WebkitOverflowScrolling: "touch", // For smoother scrolling on iOS
+        "&::-webkit-scrollbar": {
+          display: "none", // Hide scrollbar for webkit browsers
+        },
+      }}
+    >
+      {/* Close Button (Cross Mark) */}
+      <button
+        onClick={closeModal}
+        className="absolute top-4 right-4 text-white hover:text-red-500 transition duration-200"
+        aria-label="Close"
+      >
+        <AiOutlineClose size={24} />
+      </button>
+      <h2 className="text-xl sm:text-2xl font-bold mb-2 text-center">
+        {selectedPackage.title} Details
+      </h2>
+      <hr className="border-t border-gray-300 my-2" />
+      <table className="min-w-full border-collapse">
+        <tbody className="text-left">
+          {selectedPackage.completeData.map((item, index) => (
+            <tr key={index} className="border-b hover:bg-gray-700">
+              <td className="px-2 py-1 sm:px-4 sm:py-2 font-semibold">{item.label}:</td>
+              <td className="px-2 py-1 sm:px-4 sm:py-2">{item.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}
+
 
       {/* Contact Section */}
       <section
