@@ -54,7 +54,7 @@ const Procedure = () => {
   };
 
   return (
-    <section ref={sectionRef} className="container mx-auto pt-12 px-4">
+    <section ref={sectionRef} className="container mx-auto py-16 px-8">
       <motion.h2
         className="text-xl font-semibold text-red-500 mb-2"
         variants={commonFadeIn}
@@ -87,10 +87,10 @@ const Procedure = () => {
             alt="Students working on a project"
             width={800}
             height={450}
-            className="rounded-lg h-3/4"
+            className="rounded-lg w-full"
           />
           <motion.div
-            className="absolute bottom-48 left-4 bg-white p-4 shadow-lg rounded-lg flex space-x-8 w-full justify-around"
+            className="absolute bottom-6 left-4 bg-white p-4 shadow-lg rounded-lg flex space-x-8 w-full justify-around"
             variants={zoomIn}
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
@@ -122,6 +122,7 @@ const Procedure = () => {
             { title: '2/ Placements after Course', description: 'We help our students secure placements in top companies after they complete our courses, ensuring their success.' },
             { title: '3/ Good Support for Students', description: 'We provide comprehensive support to our students, including mentorship, career counseling, and more.' },
             { title: '4/ Interactive Learning', description: 'Our interactive learning approach ensures that our students are engaged and motivated to learn, leading to better outcomes.' },
+            { title: '5/ Flexible Learning Options', description: 'We offer a variety of learning options, including online and hybrid classes, to fit different schedules and learning preferences.' }
           ].map((item, index) => (
             <motion.div
               key={index}

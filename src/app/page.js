@@ -34,7 +34,15 @@ const Home = () => {
   };
 
   return (
-    <div ref={homeRef}>
+    <div ref={homeRef} 
+    style={{
+      overflowY: "auto",    // Enable vertical scrolling
+      scrollbarWidth: "thin", // For Firefox, make scrollbar thinner
+      WebkitOverflowScrolling: "touch", // For smoother scrolling on iOS
+      '&::-webkit-scrollbar': {
+        display: "none", // Hide scrollbar for webkit browsers
+      },
+    }}>
       <HeroSection />
       <AboutSection />
       <MissionVision />
