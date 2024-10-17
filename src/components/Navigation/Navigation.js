@@ -1,17 +1,12 @@
 "use client";
 
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import {
-  CircleUser,
-  Menu,
-  Package2,
-  Search,
-} from 'lucide-react';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { CircleUser, Menu, Package2, Search } from "lucide-react";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,9 +14,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Input } from '@/components/ui/input';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Navigation = () => {
   const pathname = usePathname();
@@ -49,21 +44,35 @@ const Navigation = () => {
         <nav className="hidden md:flex md:flex-1 justify-center gap-6 text-lg font-bold md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link
             href="/"
-            className={`text-foreground transition-colors ${pathname === '/' ? 'font-bold text-red-500' : 'text-muted-foreground'} hover:text-foreground`}
+            className={`text-foreground transition-colors ${
+              pathname === "/"
+                ? "font-bold text-red-500"
+                : "text-muted-foreground"
+            } hover:text-foreground`}
           >
             Home
           </Link>
           <Link
             href="/aboutus"
-            className={`text-muted-foreground transition-colors ${pathname === '/aboutus' ? 'font-bold text-red-500' : ''} hover:text-foreground`}
+            className={`text-muted-foreground transition-colors ${
+              pathname === "/aboutus" ? "font-bold text-red-500" : ""
+            } hover:text-foreground`}
           >
             About Us
           </Link>
           <Link
             href="/courses"
-            className={`text-muted-foreground transition-colors ${pathname === '/courses' ? 'font-bold text-red-500' : ''} hover:text-foreground`}
+            className={`text-muted-foreground transition-colors ${
+              pathname === "/courses" ? "font-bold text-red-500" : ""
+            } hover:text-foreground`}
           >
             Courses
+          </Link>
+          <Link
+            href="/models"
+            className={`text-muted-foreground transition-colors ${pathname === '/models' ? 'font-bold text-red-500' : ''} hover:text-foreground`}
+          >
+            Models
           </Link>
           <Link
             href="/services"
@@ -71,15 +80,39 @@ const Navigation = () => {
           >
             Our Services
           </Link>
+          {/* Dropdown Menu for Our Services */}
+          {/* <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <div
+                className={`cursor-pointer text-muted-foreground transition-colors ${
+                  pathname === "/services" ? "font-bold text-red-500" : ""
+                } hover:text-foreground`}
+              >
+                Our Services
+              </div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem asChild>
+                <Link href="/models">Models</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/services">Services</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu> */}
           <Link
             href="/alumnis"
-            className={`text-muted-foreground transition-colors ${pathname === '/alumnis' ? 'font-bold text-red-500' : ''} hover:text-foreground`}
+            className={`text-muted-foreground transition-colors ${
+              pathname === "/alumnis" ? "font-bold text-red-500" : ""
+            } hover:text-foreground`}
           >
             Alumni
           </Link>
           <Link
             href="/contact"
-            className={`text-muted-foreground transition-colors ${pathname === '/contact' ? 'font-bold text-red-500' : ''} hover:text-foreground`}
+            className={`text-muted-foreground transition-colors ${
+              pathname === "/contact" ? "font-bold text-red-500" : ""
+            } hover:text-foreground`}
           >
             Contact Us
           </Link>
@@ -138,37 +171,59 @@ const Navigation = () => {
               </Link>
               <Link
                 href="/"
-                className={`text-foreground transition-colors ${pathname === '/' ? 'font-bold text-red-500' : 'text-muted-foreground'} hover:text-foreground`}
+                className={`text-foreground transition-colors ${
+                  pathname === "/"
+                    ? "font-bold text-red-500"
+                    : "text-muted-foreground"
+                } hover:text-foreground`}
               >
                 Home
               </Link>
               <Link
                 href="/aboutus"
-                className={`text-muted-foreground transition-colors ${pathname === '/aboutus' ? 'font-bold text-red-500' : ''} hover:text-foreground`}
+                className={`text-muted-foreground transition-colors ${
+                  pathname === "/aboutus" ? "font-bold text-red-500" : ""
+                } hover:text-foreground`}
               >
                 About Us
               </Link>
               <Link
                 href="/courses"
-                className={`text-muted-foreground transition-colors ${pathname === '/courses' ? 'font-bold text-red-500' : ''} hover:text-foreground`}
+                className={`text-muted-foreground transition-colors ${
+                  pathname === "/courses" ? "font-bold text-red-500" : ""
+                } hover:text-foreground`}
               >
                 Courses
               </Link>
               <Link
+                href="/models"
+                className={`text-muted-foreground transition-colors ${
+                  pathname === "/models" ? "font-bold text-red-500" : ""
+                } hover:text-foreground`}
+              >
+                Models
+              </Link>
+              <Link
                 href="/services"
-                className={`text-muted-foreground transition-colors ${pathname === '/services' ? 'font-bold text-red-500' : ''} hover:text-foreground`}
+                className={`text-muted-foreground transition-colors ${
+                  pathname === "/services" ? "font-bold text-red-500" : ""
+                } hover:text-foreground`}
               >
                 Our Services
               </Link>
               <Link
                 href="/alumnis"
-                className={`text-muted-foreground transition-colors ${pathname === '/alumnis' ? 'font-bold text-red-500' : ''} hover:text-foreground`}
+                className={`text-muted-foreground transition-colors ${
+                  pathname === "/alumnis" ? "font-bold text-red-500" : ""
+                } hover:text-foreground`}
               >
                 Alumni
               </Link>
               <Link
                 href="/contact"
-                className={`text-muted-foreground transition-colors ${pathname === '/contact' ? 'font-bold text-red-500' : ''} hover:text-foreground`}
+                className={`text-muted-foreground transition-colors ${
+                  pathname === "/contact" ? "font-bold text-red-500" : ""
+                } hover:text-foreground`}
               >
                 Contact Us
               </Link>

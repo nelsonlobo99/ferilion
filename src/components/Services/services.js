@@ -20,7 +20,7 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl font-bold mb-4"
         >
-          Our Services
+          Services
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
