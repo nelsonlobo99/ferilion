@@ -53,7 +53,7 @@ const CategoriesSection = () => {
           </motion.h1>
         </div>
 
-        <div className="flex justify-center space-x-12">
+        <div className="flex justify-center space-x-8 md:space-x-12 lg:space-x-12 xl:space-x-12">
           {/* Category Card 1: Register */}
           <div className="p-3 md:p-6 lg:p-6 rounded-lg shadow-lg w-52 bg-lime-200 flex flex-col justify-between mt-2">
             <div className="flex items-center justify-center">

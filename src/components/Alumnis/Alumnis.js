@@ -31,7 +31,7 @@ const Alumnis = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4">
       {/* Page Title */}
       <motion.section
         initial={{ opacity: 0, y: 50 }}
